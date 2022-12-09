@@ -36,7 +36,7 @@ These components contain minimal error checking as we wanted to highlight the as
     A tutorial breaking down this code is at
     https://staging.docs.bundlr.network/docs/tutorials/WebBundlr-ProgressBars
 
--   `Lens Poster`
+-   `/lens-poster`
     Components to fund a node, check node balance, upload a file, create
     metadata featuring that file, upload metadata to Bundlr, post metadata
     to Lens.
