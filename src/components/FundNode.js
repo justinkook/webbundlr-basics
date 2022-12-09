@@ -18,13 +18,13 @@ const FundNode = () => {
 		rainbowKitProvider.getSigner = () => rainbowKitSigner;
 		// create a WebBundlr object
 		const bundlr = new WebBundlr("https://devnet.bundlr.network", "matic", rainbowKitProvider, {
-			providerUrl: "https://rpc-mumbai.matic.today",
+			providerUrl: "https://matic-mumbai.chainstacklabs.com",
 		});
 
 		await bundlr.ready();
 
 		const fundAmountParsed = new BigNumber(fundAmount).multipliedBy(bundlr.currencyConfig.base[1]);
-
+		console.log("Funding: ", fundAmountParsed.toString());
 		await bundlr
 			.fund(fundAmountParsed.toString())
 			.then((res) => {
@@ -38,7 +38,7 @@ const FundNode = () => {
 
 	return (
 		<div className="px-10 py-5 flex flex-col" id="fund_container">
-			<label className="pr-5block mb-2 text-sm font-medium text-text" for="file_input">
+			<label className="pr-5 block mb-2 font-bold text-text underline decoration-secondary">
 				Fund Node
 			</label>
 			<div className="flex flex-row">
@@ -49,7 +49,7 @@ const FundNode = () => {
 					onChange={(e) => setFundAmount(e.target.value)}
 				/>
 				<button
-					class="ml-5 bg-primary text-background font-bold py-1 px-3 rounded-lg"
+					className="ml-5 bg-primary text-background font-bold py-1 px-3 rounded-lg"
 					onClick={fundNode}
 				>
 					Fund

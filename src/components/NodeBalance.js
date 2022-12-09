@@ -16,7 +16,7 @@ const NodeBalance = () => {
 		// use method injection to add the missing function
 		rainbowKitProvider.getSigner = () => rainbowKitSigner;
 		const bundlr = new WebBundlr("https://devnet.bundlr.network", "matic", rainbowKitProvider, {
-			providerUrl: "https://rpc-mumbai.matic.today",
+			providerUrl: "https://matic-mumbai.chainstacklabs.com",
 		});
 
 		const curBalance = await bundlr.getBalance(rainbowKitSigner._address);
@@ -30,18 +30,18 @@ const NodeBalance = () => {
 
 	return (
 		<div className="px-10 py-5 flex flex-col" id="balance_container">
-			<label className="pr-5block mb-2 text-sm font-medium text-text" for="file_input">
+			<label className="pr-5 block mb-2 font-bold text-text underline decoration-secondary">
 				Node Balance
 			</label>
 			<div className="flex flex-row">
 				<input
 					className="rounded w-1/3 pl-3 focus:outline-none text-black"
 					type="number"
-					readonly
+					readOnly
 					value={nodeBalance}
 				/>
 				<button
-					class="ml-5 bg-primary text-background font-bold py-1 px-3 rounded-lg"
+					className="ml-5 bg-primary text-background font-bold py-1 px-3 rounded-lg"
 					onClick={updateNodeBalance}
 				>
 					Refresh

@@ -39,7 +39,7 @@ const ProgressBarUploader = () => {
 		rainbowKitProvider.getSigner = () => rainbowKitSigner;
 		// create a WebBundlr object
 		const bundlr = new WebBundlr("https://devnet.bundlr.network", "matic", rainbowKitProvider, {
-			providerUrl: "https://rpc-mumbai.matic.today",
+			providerUrl: "https://matic-mumbai.chainstacklabs.com",
 		});
 
 		await bundlr.ready();
@@ -103,7 +103,7 @@ const ProgressBarUploader = () => {
 
 	return (
 		<div className="flex flex-col py-5 ml-10">
-			<label className="block mb-2 text-sm font-medium text-text" for="file_input">
+			<label className="pr-5 block mb-2 font-bold text-text underline decoration-secondary">
 				Upload file
 			</label>
 			<div className="flex flex-row">
@@ -115,18 +115,18 @@ const ProgressBarUploader = () => {
 					name="files[]"
 				/>
 				<button
-					class="ml-5 bg-primary hover:bg-blue-700 text-background font-bold py-1 px-3 rounded-lg"
+					className="ml-5 bg-primary hover:bg-blue-700 text-background font-bold py-1 px-3 rounded-lg"
 					onClick={upload}
 				>
 					Upload
 				</button>
 			</div>
 			<div
-				class="mt-2 w-2/3 h-6 bg-gray-200 rounded-full dark:bg-gray-700"
+				className="mt-2 w-2/3 h-6 bg-gray-200 rounded-full dark:bg-gray-700"
 				id="progress_bar_container"
 			>
 				<div
-					class="h-6  bg-blue-600 rounded-full dark:bg-blue-500"
+					className="h-6  bg-blue-600 rounded-full dark:bg-blue-500"
 					style={{ width: progress + "%" }}
 					id="progress_bar"
 				></div>

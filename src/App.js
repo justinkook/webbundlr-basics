@@ -1,17 +1,21 @@
 import "./index.css";
-import ProgressBarPage from "./pages/ProgressBarPage";
+import Navbar from "./components/Navbar";
+import NormalUploaderPage from "./pages/NormalUploaderPage";
+import LargeFileUploader from "./pages/LargeFileUploader";
+import BundlrToLensPage from "./pages/BundlrToLensPage";
+import AboutPage from "./pages/AboutPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "@rainbow-me/rainbowkit/styles.css";
 
 import { getDefaultWallets, RainbowKitProvider, darkTheme } from "@rainbow-me/rainbowkit";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
-import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 
 const { chains, provider } = configureChains(
 	[chain.polygonMumbai],
-	[alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()],
+	// [chain.polygon],
+	[publicProvider()],
 );
 
 const { connectors } = getDefaultWallets({
@@ -38,10 +42,14 @@ function App() {
 					overlayBlur: "small",
 				})}
 			>
+				<Navbar />
 				<BrowserRouter>
 					<Routes>
-						<Route path="/" element={<ProgressBarPage />} />
-						<Route path="/progress-bar" element={<ProgressBarPage />} />
+						<Route path="/" element={<AboutPage />} />
+						<Route path="/normal-uploader" element={<NormalUploaderPage />} />
+						<Route path="/large-file-uploader" element={<LargeFileUploader />} />
+						<Route path="/lens-poster" element={<BundlrToLensPage />} />
+						<Route path="/about" element={<AboutPage />} />
 					</Routes>
 				</BrowserRouter>
 			</RainbowKitProvider>

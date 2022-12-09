@@ -1,9 +1,8 @@
 import "../index.css";
 
 import React, { useState } from "react";
-import Logo from "../assets/umbrella-64.png";
+import Logo from "../assets/bundlr-logo.svg";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-scroll";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 /**
@@ -19,53 +18,47 @@ const Navbar = () => {
 				<img src={Logo} alt="Umbrella" style={{ width: "50px" }} />
 			</div>
 			{/* desktop menu */}
-			<ul className="hidden md:flex">
+			<ul className="hidden md:flex mr-20">
 				<li>
-					<Link
-						className="hover:border-background border-2 px-4 py-2"
-						to="about"
-						smooth={true}
+					<a
+						href="/normal-uploader"
+						className="hover:border-background border-2 px-4 py-2 mx-1 font-bold text-black"
+						duration={500}
+					>
+						normal uploader
+					</a>
+				</li>
+				<li>
+					<a
+						href="/large-file-uploader"
+						className="hover:border-background border-2 px-4 py-2 mx-1 font-bold text-black"
+						duration={500}
+					>
+						large file uploader
+					</a>
+				</li>
+				<li>
+					<a
+						href="/lens-poster"
+						className="hover:border-background border-2 px-4 py-2 mx-1 font-bold text-black"
+						to=""
+						offset={-100}
+						duration={500}
+					>
+						lens poster
+					</a>
+				</li>
+				<li>
+					<a
+						href="/about"
+						className="hover:border-background border-2 px-4 py-2 mx-1 font-bold text-black"
+						offset={-100}
 						duration={500}
 					>
 						about
-					</Link>
-				</li>
-				<li>
-					<Link
-						className="hover:border-background border-2 px-4 py-2"
-						to="wallet"
-						smooth={true}
-						duration={500}
-					>
-						wallet
-					</Link>
-				</li>
-				<li>
-					<Link
-						className="hover:border-background border-2 px-4 py-2"
-						to="check-price"
-						smooth={true}
-						offset={-100}
-						duration={500}
-					>
-						check price
-					</Link>
-				</li>
-				<li>
-					<Link
-						className="hover:border-background border-2 px-4 py-2"
-						to="upload"
-						smooth={true}
-						offset={-100}
-						duration={500}
-					>
-						upload
-					</Link>
+					</a>
 				</li>
 			</ul>
-			<div className="pr-5">
-				<ConnectButton showBalance={false} />
-			</div>
 
 			{/* hamburger */}
 			<div onClick={handleClick} className="md:hidden z-10">
@@ -80,24 +73,9 @@ const Navbar = () => {
 				}
 			>
 				<li className="py-6 text-4xl">
-					<Link onClick={handleClick} to="about" smooth={true} duration={500}>
+					<a href="/about" onClick={handleClick} to="about" duration={500}>
 						about
-					</Link>
-				</li>
-				<li className="py-6 text-4xl">
-					<Link onClick={handleClick} to="wallet" smooth={true} duration={500}>
-						wallet
-					</Link>
-				</li>
-				<li className="py-6 text-4xl">
-					<Link onClick={handleClick} to="check-price" smooth={true} duration={500}>
-						check price
-					</Link>
-				</li>
-				<li className="py-6 text-4xl">
-					<Link onClick={handleClick} to="upload" smooth={true} duration={500}>
-						upload
-					</Link>
+					</a>
 				</li>
 			</ul>
 			{/* social */}
