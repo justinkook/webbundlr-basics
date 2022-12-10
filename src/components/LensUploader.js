@@ -37,26 +37,49 @@ const LensUploader = (props) => {
 
 	useEffect(() => {
 		if (!handle) setMetadata("Please login first.");
+		// metadata structure for embedded url posts
+		// setMetadata(
+		// 	`{
+		// 		"version": "2.0.0",
+		// 		"metadata_id": "${uuid()}",
+		// 		"description": "gm (🌿, 🌿)",
+		// 		"content": "The Design Is Sublime",
+		// 		"animation_url": "https://arweave.net/i4iQhgpzcYaC53OyaRBZtlBzgwGJjTdqtFOPFN6HAVI",
+		// 		"external_url": "https://arweave.net/i4iQhgpzcYaC53OyaRBZtlBzgwGJjTdqtFOPFN6HAVI",
+		// 		"image": null,
+		// 		"imageMimeType": null,
+		// 		"name": "Post by ${handle}",
+		// 		"attributes": [{ "traitType": "type", "value": "POST" }],
+		// 		"media": [],
+		// 		"appId": "Blockmix",
+		// 		"locale": "en",
+		// 		"mainContentFocus": "EMBED"
+		// 	}`,
+		// );
+		// metadata structure for image posts
 		setMetadata(
 			`{
 				"version": "2.0.0",
 				"metadata_id": "${uuid()}",
 				"description": "gm (🌿, 🌿)",
-				"content": "The Design Is Sublime",
-				"animation_url": "https://arweave.net/i4iQhgpzcYaC53OyaRBZtlBzgwGJjTdqtFOPFN6HAVI",
-				"external_url": "https://arweave.net/i4iQhgpzcYaC53OyaRBZtlBzgwGJjTdqtFOPFN6HAVI",
-				"image": null,
-				"imageMimeType": null,
+				"image": "https://arweave.net/CO9EpX0lekJEfXUOeXncUmMuG8eEp5WJHXl9U9yZUYA",
+				"imageMimeType": "image/png",
 				"name": "Post by ${handle}",
 				"attributes": [{ "traitType": "type", "value": "POST" }],
-				"media": [],
-				"appId": "Blockmix",
+				"media": [
+					{
+					  "item": "https://arweave.net/CO9EpX0lekJEfXUOeXncUmMuG8eEp5WJHXl9U9yZUYA",
+					  "type": "image/png",
+					  "altTag": ""
+					}
+				  ],
+				"appId": "ImageUploader",
 				"locale": "en",
-				"mainContentFocus": "EMBED"
+				"mainContentFocus": "IMAGE"
 			}`,
 		);
 	}, [handle]);
-
+	//https://arweave.net/CO9EpX0lekJEfXUOeXncUmMuG8eEp5WJHXl9U9yZUYA
 	const checkConnection = async () => {
 		const provider = new ethers.providers.Web3Provider(window.ethereum);
 		const accounts = await provider.listAccounts();
