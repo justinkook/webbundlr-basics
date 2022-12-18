@@ -160,23 +160,20 @@ const LensUploader = (props) => {
 		// use method injection to add the missing function
 		rainbowKitProvider.getSigner = () => rainbowKitSigner;
 		// create a WebBundlr object
-		// const bundlr = new WebBundlr("https://devnet.bundlr.network", "matic", rainbowKitProvider, {
-		// 	providerUrl: "https://matic-mumbai.chainstacklabs.com",
-		// });
-		const bundlr = new WebBundlr("https://node2.bundlr.network", "matic", rainbowKitProvider);
+		const bundlr = new WebBundlr("https://devnet.bundlr.network", "matic", rainbowKitProvider, {
+			providerUrl: "https://matic-mumbai.chainstacklabs.com",
+		});
+		//const bundlr = new WebBundlr("https://node2.bundlr.network", "matic", rainbowKitProvider);
 
 		await bundlr.ready();
-		//const data = "hello world";
 		const data = JSON.stringify(JSON.parse(metadata));
-		const tags = [{ name: "Content-Type", value: "application/json" }];
-		// const transaction = bundlr.createTransaction(data, { tags });
-		const transaction = bundlr.createTransaction(data);
+		const tx = await bundlr.upload(data, {
+			tags: [{ name: "Content-Type", value: "application/json" }],
+		});
 
-		await transaction.sign();
-		await transaction.upload();
-		console.log(`Upload success content URI= https://arweave.net/${transaction.id}`);
-		setMessage(`Upload success content URI= https://arweave.net/${transaction.id}`);
-		setContentURI("https://arweave.net/" + transaction.id);
+		console.log(`Upload success content URI= https://arweave.net/${tx.id}`);
+		setMessage(`Upload success content URI= https://arweave.net/${tx.id}`);
+		setContentURI("https://arweave.net/" + tx.id);
 	};
 
 	const doPostToLens = async () => {

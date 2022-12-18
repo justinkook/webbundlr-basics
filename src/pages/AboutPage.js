@@ -1,26 +1,21 @@
 import React from "react";
-import ProgressBarUploader from "../components/ProgressBarUploader";
-import FundNode from "../components/FundNode";
-import NodeBalance from "../components/NodeBalance";
-import LensUploader from "../components/LensUploader";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const AboutPage = () => {
 	return (
-		<div name="about" className="w-full h-screen bg-background text-text pt-20">
-			<div className="flex flex-col items-start w-full h-full pt-10">
+		<div name="about" className="w-full h-screen text-text pt-20">
+			<div className="flex flex-col items-start w-full h-full pt-10 ">
 				<div className="ml-20 pl-5 w-2/3">
 					<div className="text-left pb-8">
 						<p className="text-4xl font-bold inline border-b-4 border-secondary">
 							Bundlr In The Browser
 						</p>
 						<span className="text-base mt-3 ml-5">
-							<span className="text-2xl">
+							<p className="text-2xl">
 								Interactive code examples showing how to use Bundlr in the browser with
 								React.
-							</span>
+							</p>
 
-							<p className="text-2xl">
+							<p className="text-2xl mt-2">
 								You can clone this repository{" "}
 								<a
 									className="underline decoration-primary"
