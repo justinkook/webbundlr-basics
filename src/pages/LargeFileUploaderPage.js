@@ -2,10 +2,9 @@ import React from "react";
 import ProgressBarUploader from "../components/ProgressBarUploader";
 import FundNode from "../components/FundNode";
 import NodeBalance from "../components/NodeBalance";
-import LensUploader from "../components/LensUploader";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
-const LargeFileUploader = () => {
+const LargeFileUploaderPage = () => {
 	return (
 		<div name="about" className="w-full h-screen bg-background text-text pt-20">
 			<div className="flex flex-col items-start w-full h-full pt-10">
@@ -55,6 +54,4 @@ const LargeFileUploader = () => {
 		</div>
 	);
 };
-export default LargeFileUploader;
-
-///
+export default LargeFileUploaderPage;

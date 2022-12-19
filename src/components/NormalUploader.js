@@ -45,7 +45,7 @@ const NormalUploader = () => {
 			const tx = await bundlr.upload(dataStream, {
 				tags: [{ name: "Content-Type", value: fileType }],
 			});
-			console.log(tx);
+
 			console.log(`File uploaded ==> https://arweave.net/${tx.id}`);
 			setMessage(`Upload Success:`);
 			setUploadedURL("https://arweave.net/" + tx.id);

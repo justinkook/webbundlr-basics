@@ -4,7 +4,7 @@ import FundNode from "../components/FundNode";
 import NodeBalance from "../components/NodeBalance";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
-const LargeFileUploader = () => {
+const NormalUploaderPage = () => {
 	return (
 		<div name="about" className="w-full h-screen bg-background text-text pt-20">
 			<div className="flex flex-col items-start w-full h-full pt-10">
@@ -48,6 +48,4 @@ const LargeFileUploader = () => {
 		</div>
 	);
 };
-export default LargeFileUploader;
-
-///
+export default NormalUploaderPage;
