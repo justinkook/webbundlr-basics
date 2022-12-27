@@ -247,11 +247,17 @@ const LensUploader = (props) => {
 				Your own apps will likely create a better UI experience by combining many of the steps
 				below, we broke them apart to help you understand each step of the process.
 			</p>
+			<p className="w-2/3 mt-5">
+				This demonstrates how to upload post metadata for an image style post.
+			</p>
+
 			<ol className="list-disc ml-5 mt-5 w-2/3">
-				<li>Copy & Paste the URL of the file you uploaded into the JSON below</li>
 				<li>
-					Click "Login" to login to Lens Protocol and create and authentation token that will be
-					used when posting.
+					Click "Login" to login to Lens Protocol and create an authentation token that will be
+					used when posting.{" "}
+					<span className="font-bold">
+						The wallet address you use to login must have a Lens account.
+					</span>
 				</li>
 				<li>Click "Validate Metadata" to ensure your metadata is correct.</li>
 				<li>

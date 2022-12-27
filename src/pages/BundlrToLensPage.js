@@ -15,35 +15,14 @@ const BundlrToLensPage = () => {
 						<p className="text-4xl font-bold inline border-b-4 border-secondary">
 							Bundlr To Lens ...
 						</p>
-						<div className="text-base mt-3 ml-5">
-							Demo of using the chunked uploader to upload a large file.
-							<ol className="ml-1 list-decimal list-inside">
-								<li>
-									Head on over to the{" "}
-									<a
-										className="underline decoration-primary"
-										href="https://mumbaifaucet.com/"
-										target="_blank"
-									>
-										Mumbai Faucet.
-									</a>
-								</li>
-								<li>Grab a full (free) Mumbai Matic.</li>
-								<li>Fund a node.</li>
-								<li>Upload a file.</li>
-								<li>Share To Lens.</li>
-							</ol>
-						</div>
 					</div>
 				</div>
 
 				<div className="pl-5 pr-5 w-full ">
-					<div className="px-10 py-5" id="connect_container">
+					<div className="px-10 py-5 z-0" id="connect_container">
 						<ConnectButton showBalance={true} />
 					</div>
-					<FundNode />
-					<NodeBalance />
-					<NormalUploader />
+
 					<LensUploader />
 				</div>
 			</div>
