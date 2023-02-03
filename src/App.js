@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import NormalUploaderPage from "./pages/NormalUploaderPage";
 import LargeFileUploaderPage from "./pages/LargeFileUploaderPage";
 import BundlrToLensPage from "./pages/BundlrToLensPage";
+import LivepeerStreamingPage from "./pages/LivepeerStreamingPage";
 import AboutPage from "./pages/AboutPage";
 import DevPage from "./pages/DevPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -52,6 +53,7 @@ function App() {
 								<Route path="/normal-uploader" element={<NormalUploaderPage />} />
 								<Route path="/large-file-uploader" element={<LargeFileUploaderPage />} />
 								<Route path="/lens-poster" element={<BundlrToLensPage />} />
+								<Route path="/livepeer" element={<LivepeerStreamingPage />} />
 								<Route path="/about" element={<AboutPage />} />
 								<Route path="/dev" element={<DevPage />} />
 							</Routes>

@@ -11,14 +11,14 @@ const LargeFileUploaderPage = () => {
 				<div className="pl-5 w-full">
 					<div className="text-left pb-8">
 						<p className="text-4xl font-bold inline border-b-4 border-secondary">
-							Lage File Uploader ...
+							Large File Uploader ...
 						</p>
 						<p className="text-base mt-3 ml-5">
 							Demo of using the chunked uploader to upload a large file. <br />
 							We also have{" "}
 							<a
 								className="underline decoration-primary"
-								href="https://staging.docs.bundlr.network/docs/tutorials/WebBundlr-ProgressBars"
+								href="https://docs.bundlr.network/docs/tutorials/WebBundlr-ProgressBars"
 							>
 								a tutorial
 							</a>{" "}

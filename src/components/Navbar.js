@@ -47,6 +47,17 @@ const Navbar = () => {
 					>
 						lens poster
 					</a>
+				</li>{" "}
+				<li>
+					<a
+						href="/livepeer"
+						className="hover:border-background border-2 px-4 py-2 mx-1 font-bold text-black"
+						to=""
+						offset={-100}
+						duration={500}
+					>
+						livepeer transcoding
+					</a>
 				</li>
 				<li>
 					<a

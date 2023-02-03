@@ -51,6 +51,12 @@ const AboutPage = () => {
 									metadata featuring that file, upload metadata to Bundlr, post metadata
 									to Lens.
 								</li>
+								<li className="mt-5">
+									<a className="underline decoration-primary" href="/livepeer">
+										Lens Poster:
+									</a>{" "}
+									Components to transcode video stored on Arweave using Livepeer.
+								</li>
 							</ul>
 						</span>
 					</div>
